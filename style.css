@@ -1,0 +1,73 @@
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 0 0 0 0;
+    color: rgb(0, 0, 0);
+    --shadowColor: rgba(0, 0, 0, 0.25);
+    --whiteShadowColor: rgba(163, 163, 163, 0.25)
+}
+
+.canvasContainer {
+    background-color: #f7900a;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    animation: colorChanger 5s linear;
+}
+
+@keyframes colorChanger {
+    from {
+        background-color: #f7900a;
+    }
+
+    to {
+        background-color: #f56403;
+    }
+}
+
+canvas {
+    position: fixed;
+    background-color: #f7900a;
+    z-index: 0;
+    animation: colorChanger 5s linear infinite alternate;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.47);
+    border-radius: 30px;
+    width: 55%;
+    height: 40%;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    box-shadow: var(--shadowColor) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: colorChanger2 1s linear infinite alternate;
+    transition: all 0.3s;
+}
+
+.overlay:hover {
+    cursor: pointer;
+    /* --shadowColor: rgba(163, 163, 163, 0.25);
+    box-shadow: var(--shadowColor) 0px 54px 55px, var(--shadowColor) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    transform: scale(1.05);
+    border: 1px solid black;
+}
+
+@keyframes colorChanger2 {
+    from {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    to {
+        box-shadow:rgba(163, 163, 163, 0.45) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}
