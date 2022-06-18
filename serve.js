@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
    res.send('Hello World');
 })
 
-var server = app.listen(6000,'192.168.10.140', function () {
+var server = app.listen(7000,'192.168.10.140', function () {
    var host = server.address().address
    var port = server.address().port
    
